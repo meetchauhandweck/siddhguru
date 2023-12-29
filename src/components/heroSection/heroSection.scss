@@ -4,30 +4,23 @@
 
   .hero_section_wrapper {
     position: relative;
-    height: calc(100vh - 215px);
+    height: calc(100vh - 250px);
     .hero_section_wrapper_inner {
       position: absolute;
-      bottom: -150px;
+      bottom: -265px;
       left: 50%;
       transform: translateX(-50%);
       .hero_section_first_image {
         position: relative;
 
-        @media (max-width: 1600px) {
-          // width: 59%;
-        }
         img {
-          // width: 66%;
-          // display: block;
-          // position: absolute;
-          // bottom: -45%;
-          // left: 50%;
-          // transform: translateX(-50%);
-          // animation: godAnimation 40s infinite linear;
-          max-width: 100%;
+          // max-width: 100%;
           display: block;
-          width: 100%;
+          width: 1000px;
           animation: godAnimation 40s infinite linear;
+          @media (max-width: 1600px) {
+            width: 800px;
+          }
         }
         &::before {
           content: "";
@@ -39,8 +32,8 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 50%;
-          height: 50%;
+          width: 55%;
+          height: 55%;
           animation: godAnimationRevenrse 40s infinite linear;
           z-index: 1;
         }
@@ -51,12 +44,15 @@
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
-          top: 55%;
+          top: 57%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 35%;
-          height: 35%;
+          width: 37%;
+          height: 33%;
           z-index: 2;
+          @media(max-width:1600px){
+            top: 56%;
+          }
         }
       }
       .hero_section_second_image {
@@ -64,13 +60,6 @@
           // width: 33%;
         }
         img {
-          // max-width: 100%;
-          // display: block;
-          // position: absolute;
-          // top: 66%;
-          // left: 50%;
-          // width: 40%;
-          // animation: godAnimationRevenrse 40s infinite linear;
         }
       }
       .hero_section_third_image {
