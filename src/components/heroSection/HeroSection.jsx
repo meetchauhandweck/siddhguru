@@ -9,14 +9,16 @@ const HeroSection = () => {
     <div className="hero_section">
       <Header />
       <div className="hero_section_wrapper">
-        <div className="hero_section_first_image">
-          <img src={image1} alt="hero_image1" />
-        </div>
-        <div className="hero_section_second_image">
+        <div className="hero_section_wrapper_inner">
+          <div className="hero_section_first_image">
+            <img src={image1} alt="hero_image1" />
+          </div>
+          {/* <div className="hero_section_second_image">
           <img src={image2} alt="hero_image2" />
         </div>
         <div className="hero_section_third_image">
           <img src={image3} alt="hero_image3" />
+        </div> */}
         </div>
       </div>
     </div>

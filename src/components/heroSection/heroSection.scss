@@ -4,55 +4,107 @@
 
   .hero_section_wrapper {
     position: relative;
-    height: 73vh;
-    .hero_section_first_image {
+    height: calc(100vh - 215px);
+    .hero_section_wrapper_inner {
       position: absolute;
-      bottom: -45%;
+      bottom: -150px;
       left: 50%;
       transform: translateX(-50%);
-      animation: godAnimation 40s infinite linear;
-      img {
+      .hero_section_first_image {
+        position: relative;
+
+        @media (max-width: 1600px) {
+          // width: 59%;
+        }
+        img {
+          // width: 66%;
+          // display: block;
+          // position: absolute;
+          // bottom: -45%;
+          // left: 50%;
+          // transform: translateX(-50%);
+          // animation: godAnimation 40s infinite linear;
+          max-width: 100%;
+          display: block;
+          width: 100%;
+          animation: godAnimation 40s infinite linear;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          background-image: url("../../images/hero_image2.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50%;
+          height: 50%;
+          animation: godAnimationRevenrse 40s infinite linear;
+          z-index: 1;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url("../../images/hero_image3.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          top: 55%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 35%;
+          height: 35%;
+          z-index: 2;
+        }
+      }
+      .hero_section_second_image {
+        @media (max-width: 1600px) {
+          // width: 33%;
+        }
+        img {
+          // max-width: 100%;
+          // display: block;
+          // position: absolute;
+          // top: 66%;
+          // left: 50%;
+          // width: 40%;
+          // animation: godAnimationRevenrse 40s infinite linear;
+        }
+      }
+      .hero_section_third_image {
+        img {
+          max-width: 100%;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
     }
-    .hero_section_second_image {
-      position: absolute;
-      top: 66%;
-      left: 50%;
-     
-      animation: godAnimationRevenrse 40s infinite linear;
-      img {
-      }
+  }
+  @keyframes godAnimation {
+    0% {
+      transform: rotate(0deg);
     }
-    .hero_section_third_image {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      img {
-        display: block;
-      }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
-}
-@keyframes godAnimation {
-  0% {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  50% {
-    transform: translateX(-50%) rotate(180deg);
-  }
-  100% {
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-@keyframes godAnimationRevenrse {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  50% {
-    transform: translate(-50%, -50%) rotate(-180deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(-360deg);
+  @keyframes godAnimationRevenrse {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(-180deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
   }
 }
