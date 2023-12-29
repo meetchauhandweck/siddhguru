@@ -1,4 +1,5 @@
 import HomePage3D from "../../components/3DHomeSection/HomePage3D";
+import EventsHomePage from "../../components/EventsHomePage/EventsHomePage";
 import FormHomePage from "../../components/Form_homePage/FormHomePage";
 import AboutAshram from "../../components/aboutAshram/AboutAshram";
 // import BrahmSutra from "../../components/brahmSutra/BramhSutra";
@@ -17,6 +18,7 @@ const Home = () => {
       <AboutAshram />
       <HomePage3D />
       {/* <BrahmSutra /> */}
+      <EventsHomePage />
       <HomePageVideoSection />
       <FormHomePage />
       <Space />
