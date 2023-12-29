@@ -3,14 +3,24 @@ import image1 from "../../images/hero_image1.png";
 import image2 from "../../images/hero_image2.png";
 import image3 from "../../images/hero_image3.png";
 import Header from "../header/Header";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const HeroSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <div className="hero_section">
       <Header />
-      <div className="hero_section_wrapper">
+      <div className="hero_section_wrapper" ref={ref}>
         <div className="hero_section_wrapper_inner">
-          <div className="hero_section_first_image">
+          <div
+            className="hero_section_first_image"
+            style={{
+              opacity: isInView ? 1 : 0,
+              transition: "all 3s",
+            }}
+          >
             <img src={image1} alt="hero_image1" />
           </div>
           {/* <div className="hero_section_second_image">
