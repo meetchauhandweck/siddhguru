@@ -3,9 +3,13 @@ import image1 from "../../images/featuredEvent1.png";
 import image2 from "../../images/featuredEvent2.png";
 import image3 from "../../images/featuredEvent3.png";
 import image4 from "../../images/featuredEvent4.png";
-import "./eventsHomePage.scss"
+import "./eventsHomePage.scss";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const EventsHomePage = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const featuredEventsData = [
     {
       id: 0,
@@ -54,8 +58,15 @@ const EventsHomePage = () => {
   ];
   return (
     <div className="eventsHomePage">
-      <div className="eventsHomePage_wrapper">
-        <div className="eventsHomePage_wrapper_left">
+      <div className="eventsHomePage_wrapper" ref={ref}>
+        <div
+          className="eventsHomePage_wrapper_left"
+          style={{
+            opacity: isInView ? 1 : 0,
+            transition: "all 2s",
+            transform: isInView ? "none" : "translateY(100px)",
+          }}
+        >
           {featuredEventsData.map((item, index) => (
             <EventHomePageItem
               key={item.id}
