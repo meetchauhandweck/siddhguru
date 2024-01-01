@@ -13,7 +13,7 @@
       @media (max-width: 1600px) {
         bottom: -380px;
       }
-      @media (max-width: 1440px) {
+      @media (max-width: 1500px) {
         bottom: -327px;
       }
       .hero_section_first_image {
@@ -25,11 +25,11 @@
           width: 1232px;
           animation: godAnimation 40s infinite linear;
           @media (max-width: 1600px) {
-            width: 1200px;
+            width: 980px;
           }
-          @media (max-width: 1500px) {
-            width: 1050px;
-          }
+          // @media (max-width: 1500px) {
+          //   width: 980px;
+          // }
         }
         &::before {
           content: "";
