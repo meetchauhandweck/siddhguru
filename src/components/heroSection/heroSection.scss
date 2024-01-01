@@ -25,7 +25,7 @@
           width: 1232px;
           animation: godAnimation 40s infinite linear;
           @media (max-width: 1600px) {
-            width: 980px;
+            width: 940px;
           }
           // @media (max-width: 1500px) {
           //   width: 980px;
@@ -60,7 +60,7 @@
           height: 33%;
           z-index: 2;
           @media (max-width: 1600px) {
-            top: 53%;
+            top: 50%;
             height: 32%;
           }
         }
