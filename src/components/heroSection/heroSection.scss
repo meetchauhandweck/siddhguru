@@ -13,6 +13,9 @@
       @media (max-width: 1600px) {
         bottom: -380px;
       }
+      @media (max-width: 1440px) {
+        bottom: -327px;
+      }
       .hero_section_first_image {
         position: relative;
 
@@ -23,6 +26,9 @@
           animation: godAnimation 40s infinite linear;
           @media (max-width: 1600px) {
             width: 1200px;
+          }
+          @media (max-width: 1500px) {
+            width: 1050px;
           }
         }
         &::before {
