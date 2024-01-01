@@ -7,19 +7,22 @@
     height: calc(100vh - 250px);
     .hero_section_wrapper_inner {
       position: absolute;
-      bottom: -265px;
+      bottom: -440px;
       left: 50%;
       transform: translateX(-50%);
+      @media (max-width: 1600px) {
+        bottom: -380px;
+      }
       .hero_section_first_image {
         position: relative;
 
         img {
           // max-width: 100%;
           display: block;
-          width: 1000px;
+          width: 1232px;
           animation: godAnimation 40s infinite linear;
           @media (max-width: 1600px) {
-            width: 800px;
+            width: 1200px;
           }
         }
         &::before {
@@ -44,14 +47,15 @@
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
-          top: 57%;
+          top: 51%;
           left: 50%;
           transform: translate(-50%, -50%);
           width: 37%;
           height: 33%;
           z-index: 2;
-          @media(max-width:1600px){
-            top: 56%;
+          @media (max-width: 1600px) {
+            top: 53%;
+            height: 32%;
           }
         }
       }

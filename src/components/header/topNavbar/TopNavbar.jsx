@@ -6,10 +6,18 @@ const TopNavbar = () => {
       <div className="topNavbar_container">
         <div className="topNavbar_wrapper">
           <ul>
-            <li>News</li>
-            <li>Gallery</li>
-            <li>Register Devotee/Volunteer</li>
-            <li>Donate</li>
+            <li>
+              <a href="#">News</a>
+            </li>
+            <li>
+              <a href="#">Gallery</a>
+            </li>
+            <li>
+              <a href="#">Register Devotee/Volunteer</a>
+            </li>
+            <li>
+              <a href="#">Donate</a>
+            </li>
           </ul>
         </div>
       </div>

@@ -4,12 +4,14 @@ import image2 from "../../images/featuredEvent2.png";
 import image3 from "../../images/featuredEvent3.png";
 import image4 from "../../images/featuredEvent4.png";
 import "./eventsHomePage.scss";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const EventsHomePage = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once
+  });
+
   const featuredEventsData = [
     {
       id: 0,
@@ -58,17 +60,11 @@ const EventsHomePage = () => {
   ];
   return (
     <div className="eventsHomePage">
-      <div className="eventsHomePage_wrapper" ref={ref}>
-        <div
-          className="eventsHomePage_wrapper_left"
-          style={{
-            opacity: isInView ? 1 : 0,
-            transition: "all 2s",
-            transform: isInView ? "none" : "translateY(100px)",
-          }}
-        >
-          {featuredEventsData.map((item, index) => (
+      <div className="eventsHomePage_wrapper">
+        <div className="eventsHomePage_wrapper_left">
+          {featuredEventsData.map((item) => (
             <EventHomePageItem
+              id={item.id}
               key={item.id}
               image={item.image}
               heading={item.bigText}
@@ -83,16 +79,36 @@ const EventsHomePage = () => {
         </div>
         <div className="eventsHomePage_wrapper_right">
           <div className="eventsHomePage_wrapper_right_content">
-            <h2>Events</h2>
-            <p>
+            <motion.h2
+              ref={ref}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              Events
+            </motion.h2>
+            <motion.p
+              ref={ref}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.49 }}
+            >
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book. It has
               survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchanged.
-            </p>
-            <a href="#">Sign Up</a>
+            </motion.p>
+            <motion.a
+              ref={ref}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              href="#"
+            >
+              Sign Up
+            </motion.a>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import HomePage3D from "../../components/3DHomeSection/HomePage3D";
 import EventsHomePage from "../../components/EventsHomePage/EventsHomePage";
 import FormHomePage from "../../components/Form_homePage/FormHomePage";
@@ -11,7 +12,9 @@ import HomePageVideoSection from "../../components/homePageVideoSection/HomePage
 import OurProgramSlider from "../../components/ourProgramSlider/OurProgramSlider";
 import TextSection from "../../components/textSection/TextSection";
 
+
 const Home = () => {
+ 
   return (
     <div>
       <HeroSection />
